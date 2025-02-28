@@ -3,7 +3,7 @@ from poker_game_runner.utils import Range, HandType
 import time
 import random
 
-BOT_NAME = "Python Bot" # Change this to your bot's name
+BOT_NAME = "Dean Moore" # Change this to your bot's name
 
 class Bot:
   @classmethod
@@ -15,4 +15,13 @@ class Bot:
 
   def act(self, obs: Observation):
     # Your code here
-    return obs.get_max_raise() # All-in
+    action = random.randit(1,10)
+    if action == 1:
+      return 0
+    if action <= 8 and >= 2:
+      return random.randit(1,1000)
+    if action == 9:
+      return obs.get_max_raise()
+    if action == 10:
+      return 1
+    #return obs.get_max_raise() # All-in
